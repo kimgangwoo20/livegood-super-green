@@ -939,7 +939,7 @@
             color: white;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 768px) {     /* 모바일 최적화 */
             .container {
                 padding: 10px;
             }
@@ -986,7 +986,7 @@
                 grid-template-columns: 1fr;
             }
         }
-
+    
         .chain-of-thought {
             background: linear-gradient(135deg, #e3f2fd, #bbdefb);
             border-radius: 20px;
@@ -1042,6 +1042,233 @@
             border-radius: 15px;
             border-left: 5px solid #4caf50;
         }
+
+                /* 해부학적 인터랙티브 시각화 CSS */
+                .anatomy-section {
+    background: linear-gradient(135deg, #343470 0%, #1d3370 50%, #6984a5 100%);  /* 어두운 그라데이션 */
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.2);  /* 밝은 테두리 */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);  /* 깊은 그림자 */
+}
+
+        .anatomy-section::before {
+            content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A, #CDDC39);
+}
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: linear-gradient(45deg, #4CAF50, #66BB6A);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .anatomy-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            min-height: 600px;
+        }
+
+        .human-body {
+            width: 300px;
+            height: 680px;
+            position: relative;
+        }
+
+        .anatomy-ingredient-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            max-width: 400px;
+        }
+
+        .anatomy-ingredient-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .anatomy-ingredient-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .anatomy-ingredient-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #4CAF50;
+            transform: translateY(-2px);
+        }
+
+        .anatomy-ingredient-item.active {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.15);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+        }
+
+        .anatomy-ingredient-name {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #4CAF50;
+        }
+
+        .anatomy-ingredient-targets {
+            font-size: 0.9em;
+            color: #a0a9b8;
+            margin-bottom: 8px;
+        }
+
+        .anatomy-ingredient-benefit {
+            font-size: 0.85em;
+            color: #e0e6ed;
+            line-height: 1.4;
+        }
+
+        .info-panel {
+            position: absolute;
+            top: 50%;
+            right: -350px;
+            transform: translateY(-50%);
+            width: 320px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-panel.show {
+            right: -340px;
+            opacity: 1;
+        }
+
+        .info-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2E7D32;
+        }
+
+        .info-content {
+            line-height: 1.6;
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10;
+            background: radial-gradient(circle, currentColor 0%, transparent 70%);
+            animation: particleGlow 0.5s infinite alternate;
+        }
+
+        @keyframes particleGlow {
+            0% { box-shadow: 0 0 5px currentColor; }
+            100% { box-shadow: 0 0 15px currentColor, 0 0 25px currentColor; }
+        }
+
+        .organ {
+            position: absolute;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .organ:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        .organ.active {
+            animation: pulse 1.5s infinite;
+            filter: brightness(1.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .anatomy-progress-indicator {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #a0a9b8;
+        }
+
+        .anatomy-demo-progress {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .anatomy-demo-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .anatomy-main-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            .anatomy-main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -1374,6 +1601,245 @@
                 </div>
             </div>
         </div>
+
+
+
+        <!-- 해부학적 인터랙티브 시각화 섹션 -->
+        <div class="anatomy-main-content">
+            <div class="anatomy-section">
+                <h2 style="color: #4CAF50; text-align: center; margin-bottom: 30px; font-size: 2.2em;">
+                    🧬 해부학적 작용 시각화
+                </h2>
+                
+                <div class="controls">
+                    <button class="control-btn" onclick="startDemo()">🎬 자동 시연</button>
+                    <button class="control-btn" onclick="stopDemo()">⏸️ 일시정지</button>
+                    <button class="control-btn" onclick="resetDemo()">🔄 리셋</button>
+                </div>
+
+                <div class="anatomy-container">
+                    <svg class="human-body" viewBox="0 0 280 640" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="medicalFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#fafafa;stop-opacity:1"/>
+                                <stop offset="100%" style="stop-color:#f5f5f5;stop-opacity:1"/>
+                            </linearGradient>
+                            
+                            <filter id="preciseShadow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#666" flood-opacity="0.3"/>
+                            </filter>
+                        </defs>
+
+                        <!-- 머리 -->
+                        <path d="M 140,20 C 160,20 170,35 170,55 C 170,75 160,80 140,80 C 120,80 110,75 110,55 C 110,35 120,20 140,20 Z" 
+                              fill="url(#medicalFill)" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- 목 -->
+                        <path d="M 135,80 L 135,100 L 145,100 L 145,80" fill="none" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- 어깨 -->
+                        <line x1="100" y1="120" x2="180" y2="120" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- 몸통 중심선 -->
+                        <line x1="140" y1="100" x2="140" y2="480" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- 갈비뼈 -->
+                        <path d="M 115,140 Q 140,135 165,140" stroke="#333" stroke-width="1.5" fill="none"/>
+                        <path d="M 120,155 Q 140,150 160,155" stroke="#333" stroke-width="1.5" fill="none"/>
+                        <path d="M 125,170 Q 140,165 155,170" stroke="#333" stroke-width="1.5" fill="none"/>
+                        <path d="M 130,185 Q 140,180 150,185" stroke="#333" stroke-width="1.5" fill="none"/>
+                        
+                        <!-- 팔 -->
+                        <line x1="100" y1="120" x2="85" y2="200" stroke="#333" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="180" y1="120" x2="195" y2="200" stroke="#333" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="85" y1="200" x2="90" y2="280" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+                        <line x1="195" y1="200" x2="190" y2="280" stroke="#333" stroke-width="5" stroke-linecap="round"/>
+                        
+                        <!-- 손 -->
+                        <ellipse cx="90" cy="290" rx="8" ry="15" fill="url(#medicalFill)" stroke="#333" stroke-width="1.5"/>
+                        <ellipse cx="190" cy="290" rx="8" ry="15" fill="url(#medicalFill)" stroke="#333" stroke-width="1.5"/>
+                        
+                        <!-- 몸통 -->
+                        <path d="M 115,140 C 110,160 110,180 115,200 C 120,220 125,240 140,240 C 155,240 160,220 165,200 C 170,180 170,160 165,140" 
+                              fill="none" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- 허리 -->
+                        <path d="M 125,240 C 120,260 118,280 120,300 L 160,300 C 162,280 160,260 155,240" 
+                              fill="none" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- 골반 -->
+                        <path d="M 120,300 C 115,320 115,340 125,360 L 155,360 C 165,340 165,320 160,300" 
+                              fill="none" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- 다리 -->
+                        <line x1="125" y1="360" x2="125" y2="480" stroke="#333" stroke-width="8" stroke-linecap="round"/>
+                        <line x1="155" y1="360" x2="155" y2="480" stroke="#333" stroke-width="8" stroke-linecap="round"/>
+                        
+                        <!-- 무릎 -->
+                        <circle cx="125" cy="480" r="6" fill="none" stroke="#333" stroke-width="2"/>
+                        <circle cx="155" cy="480" r="6" fill="none" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- 정강이 -->
+                        <line x1="125" y1="480" x2="125" y2="600" stroke="#333" stroke-width="7" stroke-linecap="round"/>
+                        <line x1="155" y1="480" x2="155" y2="600" stroke="#333" stroke-width="7" stroke-linecap="round"/>
+                        
+                        <!-- 발 -->
+                        <ellipse cx="125" cy="610" rx="15" ry="8" fill="url(#medicalFill)" stroke="#333" stroke-width="2"/>
+                        <ellipse cx="155" cy="610" rx="15" ry="8" fill="url(#medicalFill)" stroke="#333" stroke-width="2"/>
+
+                        <!-- 기관들 -->
+                        <!-- 뇌 -->
+                        <ellipse id="brain" cx="140" cy="35" rx="20" ry="15" 
+                                 fill="#ff6b6b" stroke="#fff" stroke-width="2" 
+                                 class="organ" opacity="0.9" filter="url(#preciseShadow)"/>
+                        <text x="140" y="55" text-anchor="middle" fill="white" font-size="14" font-weight="bold">🧠</text>
+                        
+                        <!-- 심장 -->
+                        <path id="heart" d="M 135,165 C 125,155 115,160 115,175 C 115,190 135,205 135,205 C 135,205 155,190 155,175 C 155,160 145,155 135,165 Z" 
+                              fill="#e91e63" stroke="#fff" stroke-width="2" 
+                              class="organ" opacity="0.9" filter="url(#preciseShadow)"/>
+                        <text x="135" y="180" text-anchor="middle" fill="white" font-size="14" font-weight="bold">❤️</text>
+                        
+                        <!-- 폐 -->
+                        <ellipse id="lung-left" cx="120" cy="170" rx="12" ry="30" 
+                                 fill="#4caf50" stroke="#fff" stroke-width="2" 
+                                 class="organ" opacity="0.85" filter="url(#preciseShadow)"/>
+                        <ellipse id="lung-right" cx="160" cy="170" rx="12" ry="30" 
+                                 fill="#4caf50" stroke="#fff" stroke-width="2" 
+                                 class="organ" opacity="0.85" filter="url(#preciseShadow)"/>
+                        <text x="120" y="175" text-anchor="middle" fill="white" font-size="12" font-weight="bold">🫁</text>
+                        <text x="160" y="175" text-anchor="middle" fill="white" font-size="12" font-weight="bold">🫁</text>
+                        
+                        <!-- 간 -->
+                        <ellipse id="liver" cx="155" cy="220" rx="18" ry="15" 
+                                 fill="#8d6e63" stroke="#fff" stroke-width="2" 
+                                 class="organ" opacity="0.9" filter="url(#preciseShadow)"/>
+                        <text x="155" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold">🟤</text>
+                        
+                        <!-- 위 -->
+                        <ellipse id="stomach" cx="125" cy="230" rx="15" ry="18" 
+                                 fill="#9c27b0" stroke="#fff" stroke-width="2" 
+                                 class="organ" opacity="0.9" filter="url(#preciseShadow)"/>
+                        <text x="125" y="235" text-anchor="middle" fill="white" font-size="12" font-weight="bold">🟣</text>
+                        
+                        <!-- 장 -->
+                        <ellipse id="intestine" cx="140" cy="280" rx="25" ry="18" 
+                                 fill="#2e7d32" stroke="#fff" stroke-width="2" 
+                                 class="organ" opacity="0.9" filter="url(#preciseShadow)"/>
+                        <text x="140" y="285" text-anchor="middle" fill="white" font-size="14" font-weight="bold">💚</text>
+                        
+                        <!-- 관절 -->
+                        <circle id="joint-shoulder" cx="100" cy="120" r="8" 
+                                fill="#ff9800" stroke="#fff" stroke-width="2" 
+                                class="organ" opacity="0.9" filter="url(#preciseShadow)"/>
+                        
+                        <circle id="joint-knee" cx="125" cy="480" r="8" 
+                                fill="#ff9800" stroke="#fff" stroke-width="2" 
+                                class="organ" opacity="0.9" filter="url(#preciseShadow)"/>
+                        
+                        <circle id="joint-knee-right" cx="155" cy="480" r="8" 
+                                fill="#ff9800" stroke="#fff" stroke-width="2" 
+                                class="organ" opacity="0.9" filter="url(#preciseShadow)"/>
+
+                        <!-- 입 (파티클 시작점) -->
+                        <circle id="mouth" cx="140" cy="90" r="4" 
+                                fill="#ff1744" stroke="#fff" stroke-width="1" opacity="0.9"/>
+                    </svg>
+
+                    <!-- 정보 패널 -->
+                    <div id="infoPanel" class="info-panel">
+                        <div class="info-title" id="infoTitle">성분을 선택하세요</div>
+                        <div class="info-content" id="infoContent">
+                            LiveGood Super Green의 9가지 강력한 성분 중 하나를 클릭하여 
+                            해당 성분이 인체에 미치는 과학적 작용 메커니즘을 확인하세요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anatomy-progress-indicator">
+                    <div id="demoStatus">수동 모드</div>
+                    <div class="anatomy-demo-progress">
+                        <div id="progressBar" class="anatomy-demo-progress-bar"></div>
+                    </div>
+                    <div id="ingredientCounter">성분 1 / 9</div>
+                </div>
+            </div>
+
+            <div class="anatomy-ingredient-panel">
+                <h3 style="margin-bottom: 20px; color: #4CAF50; text-align: center;">🌿 Super Green 성분</h3>
+                <div class="anatomy-ingredient-grid">
+                    <div class="anatomy-ingredient-item" data-ingredient="spirulina">
+                        <div class="anatomy-ingredient-name">🌀 스피루리나</div>
+                        <div class="anatomy-ingredient-targets" style="color: black;">→ 심혈관계, 면역계</div>
+                        <div class="anatomy-ingredient-benefit" style="color: black;">단백질과 철분이 풍부하여 혈액 생성과 면역력 강화에 탁월</div>
+                    </div>
+
+                    <div class="anatomy-ingredient-item" data-ingredient="alfalfa">
+                        <div class="anatomy-ingredient-name">🌱 알팔파</div>
+                        <div class="anatomy-ingredient-targets" style="color: black;">→ 심장, 간, 혈관</div>
+                        <div class="anatomy-ingredient-benefit" style="color: black;">콜레스테롤 수치 개선과 혈관 건강 증진, 간 해독 작용</div>
+                    </div>
+
+                    <div class="anatomy-ingredient-item" data-ingredient="ashwagandha">
+                        <div class="anatomy-ingredient-name">🧘 KSM-66® 아슈와간다</div>
+                        <div class="anatomy-ingredient-targets" style="color: black;">→ 뇌, 부신, 호르몬계</div>
+                        <div class="anatomy-ingredient-benefit" style="color: black;">스트레스 호르몬 코르티솔 감소, 인지 기능과 집중력 향상</div>
+                    </div>
+
+                    <div class="anatomy-ingredient-item" data-ingredient="elderberry">
+                        <div class="anatomy-ingredient-name">🫐 엘더베리</div>
+                        <div class="anatomy-ingredient-targets" style="color: black;">→ 호흡기, 면역계</div>
+                        <div class="anatomy-ingredient-benefit" style="color: black;">강력한 항바이러스 효과로 감기 예방과 호흡기 건강 보호</div>
+                    </div>
+
+                    <div class="anatomy-ingredient-item" data-ingredient="chlorella">
+                        <div class="anatomy-ingredient-name">🟢 클로렐라</div>
+                        <div class="anatomy-ingredient-targets" style="color: black;">→ 간, 혈액, 해독계</div>
+                        <div class="anatomy-ingredient-benefit" style="color: black;">중금속 해독과 간 기능 개선, 혈액 정화 작용</div>
+                    </div>
+
+                    <div class="anatomy-ingredient-item" data-ingredient="wheatgrass">
+                        <div class="anatomy-ingredient-name">🌾 밀싹</div>
+                        <div class="anatomy-ingredient-targets" style="color: black;">→ 전신, 혈액, 소화계</div>
+                        <div class="anatomy-ingredient-benefit" style="color: black;">엽록소가 풍부하여 전신 정화와 알칼리화, 에너지 증진</div>
+                    </div>
+
+                    <div class="anatomy-ingredient-item" data-ingredient="turmeric">
+                        <div class="anatomy-ingredient-name">🟡 강황 (커큐민)</div>
+                        <div class="anatomy-ingredient-targets" style="color: black;">→ 관절, 간, 염증 부위</div>
+                        <div class="anatomy-ingredient-benefit" style="color: black;">강력한 항염 효과로 관절 건강과 전신 염증 감소</div>
+                    </div>
+
+                    <div class="anatomy-ingredient-item" data-ingredient="lionsmane">
+                        <div class="anatomy-ingredient-name">🍄 라이온스 메인</div>
+                        <div class="anatomy-ingredient-targets" style="color: black;">→ 뇌, 신경계</div>
+                        <div class="anatomy-ingredient-benefit" style="color: black;">신경 성장 인자 촉진으로 뇌 건강과 기억력 향상</div>
+                    </div>
+
+                    <div class="anatomy-ingredient-item" data-ingredient="vitamins">
+                        <div class="anatomy-ingredient-name">💊 비타민 복합체</div>
+                        <div class="anatomy-ingredient-targets" style="color: black;">→ 전신 대사</div>
+                        <div class="anatomy-ingredient-benefit" style="color: black;">B군 비타민으로 에너지 대사와 신경계 기능 최적화</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="interesting-facts">
             <h2 style="color: #2c5530; text-align: center; margin-bottom: 30px;">💡 흥미로운 과학적 사실들</h2>
             <div class="facts-grid">
@@ -2044,12 +2510,14 @@
 
         // 부드러운 페이지 로드 애니메이션
         document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.header, .certification-section, .nutrition-facts');
-            elements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.style.animation = 'fadeInUp 0.8s ease-out forwards';
-                }, index * 200);
-            });
+    // 페이지 로드 즉시 자동 시작
+    setTimeout(() => {
+        startDemo();
+    }, 500);
+
+    // 스크롤 애니메이션도 초기화
+    initScrollAnimations();
+            
 
             // CSS 애니메이션 정의
             const style = document.createElement('style');
@@ -2083,6 +2551,292 @@
                 item.style.transform = 'translateY(-5px) scale(1)';
             });
         });
+
+
+
+
+
+
+
+        // 해부학적 시각화 JavaScript
+        const ingredientData = {
+            spirulina: {
+                name: "🌀 스피루리나",
+                targets: ["heart", "intestine"],
+                color: "#00CED1",
+                info: {
+                    title: "스피루리나 - 슈퍼푸드의 제왕",
+                    content: `<strong>주요 성분:</strong> 단백질 60-70%, 철분, 비타민 B12<br><br>
+                    <strong>작용 메커니즘:</strong><br>
+                    • 심혈관계: 혈중 콜레스테롤 감소, 혈압 정상화<br>
+                    • 면역계: NK세포 활성화, 항산화 효소 증가<br>
+                    • 혈액: 헤모글로빈 생성 촉진, 빈혈 개선<br><br>
+                    <strong>과학적 근거:</strong> 12주간 섭취 시 LDL 콜레스테롤 10.1% 감소`
+                }
+            },
+            alfalfa: {
+                name: "🌱 알팔파",
+                targets: ["heart", "liver"],
+                color: "#90EE90",
+                info: {
+                    title: "알팔파 - 자연의 콜레스테롤 조절사",
+                    content: `<strong>주요 성분:</strong> 사포닌, 이소플라본, 비타민 K<br><br>
+                    <strong>작용 메커니즘:</strong><br>
+                    • 심혈관: 사포닌의 콜레스테롤 흡수 억제<br>
+                    • 간 기능: 간 해독 효소 활성화<br>
+                    • 혈관 건강: 혈관 탄력성 증진<br><br>
+                    <strong>과학적 근거:</strong> 8주간 섭취 시 총 콜레스테롤 17% 감소`
+                }
+            },
+            ashwagandha: {
+                name: "🧘 KSM-66® 아슈와간다",
+                targets: ["brain"],
+                color: "#DDA0DD",
+                info: {
+                    title: "KSM-66® 아슈와간다 - 스트레스 마스터",
+                    content: `<strong>주요 성분:</strong> 위타놀라이드 5% 이상<br><br>
+                    <strong>작용 메커니즘:</strong><br>
+                    • 뇌: 코르티솔 수치 27.9% 감소<br>
+                    • 신경계: 가바 수용체 활성화<br>
+                    • 호르몬: HPA축 조절<br><br>
+                    <strong>과학적 근거:</strong> 22개 임상연구에서 스트레스 감소 효과 입증`
+                }
+            },
+            elderberry: {
+                name: "🫐 엘더베리",
+                targets: ["lung-left", "lung-right", "intestine"],
+                color: "#4B0082",
+                info: {
+                    title: "엘더베리 - 천연 항바이러스 방패",
+                    content: `<strong>주요 성분:</strong> 안토시아닌, 플라보노이드, 비타민 C<br><br>
+                    <strong>작용 메커니즘:</strong><br>
+                    • 호흡기: 바이러스 복제 억제, 염증 감소<br>
+                    • 면역계: 사이토카인 생성 조절<br>
+                    • 항산화: 활성산소 제거<br><br>
+                    <strong>과학적 근거:</strong> 감기 증상 지속기간 50% 단축 효과`
+                }
+            },
+            chlorella: {
+                name: "🟢 클로렐라",
+                targets: ["liver"],
+                color: "#228B22",
+                info: {
+                    title: "클로렐라 - 자연의 해독 전문가",
+                    content: `<strong>주요 성분:</strong> 클로로필, CGF(성장인자), 단백질<br><br>
+                    <strong>작용 메커니즘:</strong><br>
+                    • 해독: 중금속 킬레이션 효과<br>
+                    • 간 보호: 간세포 재생 촉진<br>
+                    • 혈액 정화: 독소 제거, 혈액 알칼리화<br><br>
+                    <strong>과학적 근거:</strong> 납, 카드뮴 등 중금속 배출 효과 입증`
+                }
+            },
+            wheatgrass: {
+                name: "🌾 밀싹",
+                targets: ["liver", "intestine"],
+                color: "#ADFF2F",
+                info: {
+                    title: "밀싹 - 생명력의 농축체",
+                    content: `<strong>주요 성분:</strong> 엽록소, 효소, 아미노산 19종<br><br>
+                    <strong>작용 메커니즘:</strong><br>
+                    • 전신 정화: 엽록소의 해독 작용<br>
+                    • 알칼리화: 체내 pH 균형 조절<br>
+                    • 에너지: 미토콘드리아 활성화<br><br>
+                    <strong>과학적 근거:</strong> 산소 전달 능력 향상, 항염 효과 확인`
+                }
+            },
+            turmeric: {
+                name: "🟡 강황",
+                targets: ["joint-shoulder", "joint-knee", "joint-knee-right", "liver"],
+                color: "#FFD700",
+                info: {
+                    title: "강황 (커큐민) - 황금빛 항염 전사",
+                    content: `<strong>주요 성분:</strong> 커큐민 95%<br><br>
+                    <strong>작용 메커니즘:</strong><br>
+                    • 항염: COX-2, 5-LOX 효소 억제<br>
+                    • 관절: 연골 보호, 활액 증가<br>
+                    • 간 보호: 글루타티온 생성 촉진<br><br>
+                    <strong>과학적 근거:</strong> 관절염 통증 58% 감소`
+                }
+            },
+            lionsmane: {
+                name: "🍄 라이온스 메인",
+                targets: ["brain"],
+                color: "#F0E68C",
+                info: {
+                    title: "라이온스 메인 - 뇌의 수호자",
+                    content: `<strong>주요 성분:</strong> 헤리세논, 에리나신<br><br>
+                    <strong>작용 메커니즘:</strong><br>
+                    • 신경 재생: NGF 생성 촉진<br>
+                    • 인지 능력: 시냅스 연결 강화<br>
+                    • 뇌 보호: 베타 아밀로이드 감소<br><br>
+                    <strong>과학적 근거:</strong> 기억력 테스트 점수 30% 향상`
+                }
+            },
+            vitamins: {
+                name: "💊 비타민 복합체",
+                targets: ["brain", "heart", "liver"],
+                color: "#FF6347",
+                info: {
+                    title: "비타민 B 복합체 - 에너지의 핵심",
+                    content: `<strong>주요 성분:</strong> B1, B2, B6, B12, 엽산<br><br>
+                    <strong>작용 메커니즘:</strong><br>
+                    • 에너지 대사: ATP 생성 효소 보조<br>
+                    • 신경계: 신경전달물질 합성<br>
+                    • 혈액: 적혈구 생성 지원<br><br>
+                    <strong>과학적 근거:</strong> 피로도 40% 감소, 집중력 25% 향상`
+                }
+            }
+        };
+
+        let demoRunning = false;
+        let demoIndex = 0;
+        let demoTimer;
+        const ingredients = Object.keys(ingredientData);
+
+        function createParticle(startX, startY, endX, endY, color) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.backgroundColor = color;
+            particle.style.left = startX + 'px';
+            particle.style.top = startY + 'px';
+            particle.style.boxShadow = `0 0 15px ${color}, 0 0 30px ${color}40`;
+            
+            document.querySelector('.anatomy-container').appendChild(particle);
+
+            const midX = (startX + endX) / 2 + (Math.random() - 0.5) * 40;
+            const midY = (startY + endY) / 2 - Math.abs(endX - startX) * 0.3;
+            
+            particle.animate([
+                { transform: `translate(0, 0) scale(0.8)`, opacity: 1 },
+                { transform: `translate(${midX - startX}px, ${midY - startY}px) scale(1.4)`, opacity: 0.9 },
+                { transform: `translate(${endX - startX}px, ${endY - startY}px) scale(0.6)`, opacity: 0 }
+            ], {
+                duration: 2500,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+            }).onfinish = () => particle.remove();
+        }
+
+        function activateIngredient(ingredientKey) {
+            const data = ingredientData[ingredientKey];
+            if (!data) return;
+
+            document.querySelectorAll('.anatomy-ingredient-item').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.organ').forEach(organ => organ.classList.remove('active'));
+
+            document.querySelector(`[data-ingredient="${ingredientKey}"]`).classList.add('active');
+
+            data.targets.forEach(target => {
+                const organ = document.getElementById(target);
+                if (organ) organ.classList.add('active');
+            });
+
+            const mouth = document.getElementById('mouth');
+            const mouthRect = mouth.getBoundingClientRect();
+            const containerRect = document.querySelector('.anatomy-container').getBoundingClientRect();
+            
+            data.targets.forEach((target, index) => {
+                setTimeout(() => {
+                    const targetElement = document.getElementById(target);
+                    if (targetElement) {
+                        const targetRect = targetElement.getBoundingClientRect();
+                        
+                        for (let i = 0; i < 10; i++) {
+                            setTimeout(() => {
+                                createParticle(
+                                    mouthRect.left - containerRect.left + 4,
+                                    mouthRect.top - containerRect.top + 4,
+                                    targetRect.left - containerRect.left + targetRect.width/2,
+                                    targetRect.top - containerRect.top + targetRect.height/2,
+                                    data.color
+                                );
+                            }, i * 120);
+                        }
+                    }
+                }, index * 700);
+            });
+
+            updateInfoPanel(data.info);
+        }
+
+        function updateInfoPanel(info) {
+            const panel = document.getElementById('infoPanel');
+            const title = document.getElementById('infoTitle');
+            const content = document.getElementById('infoContent');
+            
+            title.textContent = info.title;
+            content.innerHTML = info.content;
+            panel.classList.add('show');
+        }
+
+        function startDemo() {
+            if (demoRunning) return;
+            
+            demoRunning = true;
+            demoIndex = 0;
+            document.getElementById('demoStatus').textContent = '자동 시연 중...';
+            
+            runDemoStep();
+        }
+
+        function runDemoStep() {
+            if (!demoRunning) return;
+            
+            const ingredientKey = ingredients[demoIndex];
+            activateIngredient(ingredientKey);
+            
+            const progress = ((demoIndex + 1) / ingredients.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('ingredientCounter').textContent = `성분 ${demoIndex + 1} / ${ingredients.length}`;
+            
+            demoIndex = (demoIndex + 1) % ingredients.length;
+            
+            demoTimer = setTimeout(runDemoStep, 4000);
+        }
+
+        function stopDemo() {
+            demoRunning = false;
+            if (demoTimer) clearTimeout(demoTimer);
+            document.getElementById('demoStatus').textContent = '일시 정지';
+        }
+
+        function resetDemo() {
+            stopDemo();
+            demoIndex = 0;
+            document.getElementById('progressBar').style.width = '0%';
+            document.getElementById('ingredientCounter').textContent = '성분 1 / 9';
+            document.getElementById('demoStatus').textContent = '수동 모드';
+            
+            document.querySelectorAll('.anatomy-ingredient-item').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.organ').forEach(organ => organ.classList.remove('active'));
+            document.getElementById('infoPanel').classList.remove('show');
+        }
+
+        document.querySelectorAll('.anatomy-ingredient-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const ingredientKey = item.dataset.ingredient;
+                stopDemo();
+                activateIngredient(ingredientKey);
+            });
+        });
+
+        document.querySelectorAll('.organ').forEach(organ => {
+            organ.addEventListener('click', () => {
+                const organId = organ.id;
+                const relatedIngredient = Object.keys(ingredientData).find(key => 
+                    ingredientData[key].targets.includes(organId)
+                );
+                
+                if (relatedIngredient) {
+                    stopDemo();
+                    activateIngredient(relatedIngredient);
+                }
+            });
+        });
+
+
+
+
+
     </script>
 </body>
 </html>
