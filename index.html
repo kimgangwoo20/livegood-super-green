@@ -1268,6 +1268,203 @@
             }
         }
 
+                /* 임상 연구 종합 섹션 스타일 */
+                .clinical-summary-section {
+                    background: rgba(255, 255, 255, 0.95);
+                    border-radius: 20px;
+                    padding: 30px;
+                    margin-bottom: 30px;
+                    backdrop-filter: blur(10px);
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+                    border: 2px solid #4caf50;
+                }
+        
+                .user-report-section {
+                    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+                    border-radius: 15px;
+                    padding: 25px;
+                    margin-bottom: 30px;
+                    border-left: 5px solid #2196f3;
+                }
+        
+                .user-benefits-grid {
+                    display: grid;
+                    gap: 15px;
+                    margin-top: 20px;
+                }
+        
+                .benefit-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    background: rgba(255, 255, 255, 0.7);
+                    padding: 15px;
+                    border-radius: 10px;
+                    transition: all 0.3s ease;
+                }
+        
+                .benefit-item:hover {
+                    background: rgba(76, 175, 80, 0.1);
+                    transform: translateX(5px);
+                }
+        
+                .benefit-icon {
+                    font-size: 1.2em;
+                    color: #4caf50;
+                }
+        
+                .benefit-text {
+                    color: #2c5530;
+                    line-height: 1.5;
+                }
+        
+                .timeline-section {
+                    background: linear-gradient(135deg, #fff8e1, #ffecb3);
+                    border-radius: 15px;
+                    padding: 25px;
+                    border-left: 5px solid #ff9800;
+                }
+        
+                .timeline-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 20px;
+                    margin-top: 20px;
+                }
+        
+                .timeline-item {
+                    background: rgba(255, 255, 255, 0.8);
+                    border-radius: 12px;
+                    padding: 20px;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    border: 2px solid transparent;
+                }
+        
+                .timeline-item:hover {
+                    border-color: #ff9800;
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
+                }
+        
+                .timeline-period {
+                    font-weight: bold;
+                    color: #e65100;
+                    margin-bottom: 10px;
+                    font-size: 1.1em;
+                }
+        
+                .timeline-effects {
+                    color: #333;
+                    font-size: 0.95em;
+                    line-height: 1.4;
+                }
+        
+                /* 종합 건강 효과 섹션 스타일 */
+                .comprehensive-health-section {
+                    background: rgba(255, 255, 255, 0.95);
+                    border-radius: 20px;
+                    padding: 30px;
+                    margin-bottom: 30px;
+                    backdrop-filter: blur(10px);
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+                    border: 2px solid #4caf50;
+                }
+        
+                .health-intro {
+                    text-align: center;
+                    background: linear-gradient(135deg, #e8f5e8, #f1f8e9);
+                    padding: 20px;
+                    border-radius: 15px;
+                    margin-bottom: 30px;
+                    color: #2c5530;
+                    font-size: 1.1em;
+                    line-height: 1.6;
+                }
+        
+                .health-categories {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    gap: 20px;
+                    margin: 30px 0;
+                }
+        
+                .health-category {
+                    background: linear-gradient(135deg, #4caf50, #66bb6a);
+                    color: white;
+                    padding: 25px;
+                    border-radius: 15px;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                }
+        
+                .health-category:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
+                }
+        
+                .category-icon {
+                    font-size: 2.5em;
+                    margin-bottom: 10px;
+                }
+        
+                .category-title {
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+        
+                .category-subtitle {
+                    font-size: 0.9em;
+                    opacity: 0.9;
+                }
+        
+                .key-health-areas {
+                    margin-top: 30px;
+                }
+        
+                .health-areas-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                    gap: 20px;
+                    margin: 20px 0;
+                }
+        
+                .health-area {
+                    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+                    padding: 20px;
+                    border-radius: 15px;
+                    border-left: 5px solid #9c27b0;
+                    transition: all 0.3s ease;
+                }
+        
+                .health-area:hover {
+                    background: linear-gradient(135deg, #9c27b0, #ba68c8);
+                    color: white;
+                    transform: scale(1.02);
+                }
+        
+                .health-area h4 {
+                    color: #6a1b9a;
+                    margin-bottom: 12px;
+                    font-size: 1.1em;
+                }
+        
+                .health-area:hover h4 {
+                    color: white;
+                }
+        
+                .health-area p {
+                    color: #333;
+                    line-height: 1.6;
+                    font-size: 0.95em;
+                }
+        
+                .health-area:hover p {
+                    color: #f0f8f0;
+                }
+
 
     </style>
 </head>
@@ -1278,6 +1475,129 @@
             <p class="subtitle">27가지 성분 종합 평가 및 과학적 검증</p>
             <div class="expert-badge">🔬 📊 과학적 근거 추적 바탕, 영양 완전 분석 정보</div>
         </div>
+
+                <!-- 입상 연구 종합 섹션 -->
+                <div class="clinical-summary-section">
+                    <h2 style="color: #2c5530; text-align: center; margin-bottom: 30px;">🧪 임상 연구 종합</h2>
+                    
+                    <div class="user-report-section">
+                        <h3 style="color: #4caf50; margin-bottom: 20px;">💬 LiveGood Super Green 먹어본 분들 경험 후기</h3>
+                        <div class="user-benefits-grid">
+                            <div class="benefit-item">
+                                <span class="benefit-icon">✅</span>
+                                <span class="benefit-text"><strong>에너지 수준 향상</strong> - 95% 사용자가 에너지 증가 보고</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">✅</span>
+                                <span class="benefit-text"><strong>소화 개선</strong> - 복통, 복부팽만 감소</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">✅</span>
+                                <span class="benefit-text"><strong>혈압 안정화</strong> - 고혈압 환자들의 혈압 정상화</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">✅</span>
+                                <span class="benefit-text"><strong>피부 상태 개선</strong> - 습진, 여드름 완화</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">✅</span>
+                                <span class="benefit-text"><strong>체중 감소</strong> - 4개월간 15파운드 감량 사례</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="timeline-section">
+                        <h3 style="color: #ff9800; margin-bottom: 20px;">⏱️ 효과 발현 시기</h3>
+                        <div class="timeline-grid">
+                            <div class="timeline-item">
+                                <div class="timeline-period">즉시 효과 (1-7일)</div>
+                                <div class="timeline-effects">에너지 증가, 소화 개선</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-period">단기 효과 (2-4주)</div>
+                                <div class="timeline-effects">피부 상태 개선, 면역력 강화</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-period">중장기 효과 (2-6개월)</div>
+                                <div class="timeline-effects">혈압 정상화, 콜레스테롤 개선, 체중 감소</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- 종합 건강 효과 섹션 -->
+                <div class="comprehensive-health-section">
+                    <h2 style="color: #2c5530; text-align: center; margin-bottom: 30px;">💚 종합 건강 효과</h2>
+                    
+                    <div class="health-intro">
+                        <p>LiveGood Super Green은 건강의 근본적 개선을 위한 종합적 솔루션으로 다음 핵심 영역에서 탁월한 효과를 제공합니다.</p>
+                    </div>
+        
+                    <div class="health-categories">
+                        <div class="health-category immunity">
+                            <div class="category-icon">🛡️</div>
+                            <div class="category-title">면역력</div>
+                            <div class="category-subtitle">강화</div>
+                        </div>
+                        <div class="health-category digestion">
+                            <div class="category-icon">🌿</div>
+                            <div class="category-title">소화</div>
+                            <div class="category-subtitle">개선</div>
+                        </div>
+                        <div class="health-category energy">
+                            <div class="category-icon">⚡</div>
+                            <div class="category-title">에너지</div>
+                            <div class="category-subtitle">증진</div>
+                        </div>
+                        <div class="health-category detox">
+                            <div class="category-icon">🌊</div>
+                            <div class="category-title">해독</div>
+                            <div class="category-subtitle">정화</div>
+                        </div>
+                    </div>
+        
+                    <div class="key-health-areas">
+                        <h3 style="color: #e91e63; margin-bottom: 20px;">🎯 주요 건강 개선 영역</h3>
+                        
+                        <div class="health-areas-grid">
+                            <div class="health-area digestive">
+                                <h4>🛡️ 면역 시스템 강화</h4>
+                                <p>스피루리나와 베타글루칸이 면역세포 활성화를 통해 감염 저항력을 높이고, NK세포 활성도 증가로 자연 방어력을 강화합니다.</p>
+                            </div>
+                            
+                            <div class="health-area immunity">
+                                <h4>❤️ 심혈관 건강</h4>
+                                <p>보리잎의 베타글루칸과 알팔파 사포닌이 콜레스테롤을 감소시키고, 혈관 건강을 개선하여 심혈관 질환을 예방합니다.</p>
+                            </div>
+                            
+                            <div class="health-area cognitive">
+                                <h4>🧠 뇌 기능 개선</h4>
+                                <p>라이온스 메인 버섯이 신경성장인자(NGF) 생산을 촉진하여 인지 기능을 향상시키고, KSM-66 아슈와간다가 스트레스를 줄여 뇌 기능을 최적화합니다.</p>
+                            </div>
+                            
+                            <div class="health-area metabolic">
+                                <h4>🌿 항염 및 항산화</h4>
+                                <p>27가지 성분의 다양한 폴리페놀과 항산화제가 만성 염증을 줄이고, 자유라디칼로부터 세포를 보호하여 노화를 늦추고 건강을 증진시킵니다.</p>
+                            </div>
+                            
+                            <div class="health-area hormonal">
+                                <h4>⚖️ 호르몬 및 소화 개선</h4>
+                                <p>아가베 이눌린이 프리바이오틱스로 작용하여 장내 유익균을 증식시키고, 알팔파의 파이토에스트로겐이 호르몬 균형을 맞춰 갱년기 증상을 완화합니다.</p>
+                            </div>
+                            
+                            <div class="health-area detox">
+                                <h4>⚡ 에너지 및 활력 증진</h4>
+                                <p>엘더베리와 시이타케 버섯이 신체 기능을 최적화하고, 아슈와간다가 스트레스를 줄이며 비타민 B군이 에너지 대사를 촉진하여 지속적인 활력을 제공합니다.</p>
+                            </div>
+                            
+                            <div class="health-area anti-aging">
+                                <h4>📉 혈당 및 대사 개선</h4>
+                                <p>사과식초의 초산 성분이 혈당 상승을 억제하고, 다양한 식이섬유가 소화를 돕는 동시에 포만감을 주어 체중 관리에 도움을 줍니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         <div class="chain-of-thought">
             <h2 style="color: #1976d2; text-align: center; margin-bottom: 25px;">🧠 분석 과정</h2>
             
@@ -2478,7 +2798,11 @@
                 <strong style="color: #ffeb3b;">LiveGood Super Green</strong>은, 현대인의 영양 결핍 문제에 
                 대한 과학적이고 경제적인 솔루션입니다. 건강한 생활습관과 함께 사용할 때 
                 최대의 시너지 효과를 기대할 수 있습니다.
+                <br>
+                <br>
+                <br>
             </div>
+            <div style="text-align: center;">작성자 : 김강우</div>
         </div>
     </div>
 
